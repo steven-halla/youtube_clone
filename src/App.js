@@ -1,5 +1,6 @@
 import React from 'react';
 import {VideoPlayer} from "./components/VideoPlayer";
+import {SearchBar} from "./components/SearchBar";
 
 
 export const App = () => {
@@ -8,6 +9,7 @@ export const App = () => {
     <div>
       <h1>hi</h1>
       <VideoPlayer/>
+      <SearchBar/>
     </div>
 
   )
