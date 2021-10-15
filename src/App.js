@@ -1,13 +1,16 @@
 import React from 'react';
+import {VideoPlayer} from "./components/VideoPlayer";
 
 
 export const App = () => {
 
-  return(
-    <h1>hi</h1>
+  return (
+    <div>
+      <h1>hi</h1>
+      <VideoPlayer/>
+    </div>
+
   )
-
-
 }
 
 
