@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 // export const VideoPlayer = ({videoId, title}) => { // also works
 export const VideoPlayer = (props) => {
-  const { videoId, title } = props;
+  const {videoId, title} = props;
+  const {video, setVideo} = useState();
+
 
   if (!videoId) {
     return null;

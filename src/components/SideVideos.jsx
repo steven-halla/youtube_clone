@@ -1,9 +1,6 @@
 import React from 'react';
 
 export const SideVideos = () => {
-
-
-
   return(
     <div>
       <table>

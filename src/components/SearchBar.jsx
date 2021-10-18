@@ -20,7 +20,7 @@ export const SearchBar = (props) => {
     event.preventDefault();
     const videos = await searchVideos(searchQuery);
     // console.log('searchAndSetVideos:', videos);
-     setSearchResults(videos);
+    setSearchResults(videos);
   }
 
   return (
