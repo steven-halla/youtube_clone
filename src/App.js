@@ -5,26 +5,35 @@ import {SearchResultsListView} from "./components/SearchResultsListView";
 
 export const App = () => {
   const [searchResults, setSearchResults] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   console.log(searchResults);
 
-  const videoId = getVideoIdFromFirstSearchResult(searchResults);
+  // const videoId = getVideoIdFromFirstSearchResult(searchResults);
 
   const handleSetVideo = (selectedVideo) => {
-    setVideo(selectedVideo)
+    console.log('selected video', selectedVideo);
+    setSelectedVideo(selectedVideo);
   }
 
-  const [video, setVideo] = useState();
   // const video = passVideoInPlayer();
   return (
     <div>
       <h1>hi</h1>
       <SearchBar setSearchResults={setSearchResults}/>
-      <SearchResultsListView  handleSetVideo={handleSetVideo} searchResults={searchResults} video={video}/>
+      <SearchResultsListView
+        handleSetVideo={handleSetVideo}
+        searchResults={searchResults}
+      />
       <br/>
       {/*{videoId && <VideoPlayer videoId={videoId}/>}*/} {/* read up on more */}
       {/*{videoId != null ? <VideoPlayer videoId={videoId}/> : null}*/}
-      <VideoPlayer videoId={videoId}/>
+      {/*<VideoPlayer videoId={videoId}/>*/}
+      {selectedVideo != null
+        ? <VideoPlayer videoId={selectedVideo.id.videoId} />
+        : <VideoPlayer videoId={defaultVideoId} />
+      }
+      {/*{selectedVideo != null && <VideoPlayer videoId={selectedVideo.id.videoID\d}}*/}
     </div>
   )
 }

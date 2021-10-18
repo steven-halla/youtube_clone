@@ -1,12 +1,18 @@
 import React from "react";
-import {VideoPlayer} from "./VideoPlayer";
-import {dividerClasses} from "@mui/material";
 
+/*
+ * this component accepts a searchResults object, which contains the list of "items" that youtube returned to us via api.
+ * we also want to pass in handleSetVideo, so that we can set the a video to display/play when user clicks on a search result.
+ */
 export const SearchResultsListView = (props) => {
-  const { searchResults } = props;
-  const {video, setVideo} = props;
+  const { searchResults, handleSetVideo } = props;
+
   if (searchResults == null) {
-    return null;
+    return <>search results is null</>;
+  }
+
+  if (searchResults.items.length === 0) {
+    return <>no match found</>;
   }
 
   return(
@@ -25,22 +31,25 @@ export const SearchResultsListView = (props) => {
 
 const SearchResultItem = (props) => {
   const item = props.item;
+  // handleSetVideo = item;
   console.log(item);
 
-  const video = (props) => {
-    return <SearchResultItem item={item}/>
-  }
+
+  // const video = (props) => {
+  //   return <SearchResultItem item={item}/>
+  // }
+
+  console.log("Incoming Props: ", props);
 
   return (
     <div>
-      {console.log("Incoming Props: ", props)}
       {/*<a href={item.id.videoId}>*/}
 
       {/*  <img src={item.snippet.thumbnails.default.url} alt="" />*/}
 
       {/*</a>*/}
 
-      <button onClick={() => {props.handleSetVideo(video)}}>
+      <button onClick={() => {props.handleSetVideo(item)}}>
         <img src= { item.snippet.thumbnails.default.url}
              alt="searched image"
              />
