@@ -31,7 +31,7 @@ export const App = () => {
       {/*<VideoPlayer videoId={videoId}/>*/}
       {selectedVideo != null
         ? <VideoPlayer videoId={selectedVideo.id.videoId} />
-        : <VideoPlayer videoId={defaultVideoId} />
+        : <VideoPlayer videoId={defaultVideoId}  />
       }
       {/*{selectedVideo != null && <VideoPlayer videoId={selectedVideo.id.videoID\d}}*/}
     </div>

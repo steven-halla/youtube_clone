@@ -9,12 +9,13 @@ export const SearchResultsListView = (props) => {
   const {searchResults, handleSetVideo} = props;
 
   if (searchResults == null) {
-    return <>search results is null</>;
+    return <></>;
   }
 
   if (searchResults.items.length === 0) {
     return <>no match found</>;
   }
+
 
 return(
   <div>
@@ -22,10 +23,14 @@ return(
     {searchResults.items.map((item, index) => {
       {console.log("item", item)}
       return(
+
         <button key={index} onClick={() => {props.handleSetVideo(item)}}>
                 <img src={item.snippet.thumbnails.default.url}
                 alt="searched image"/>
+                {/*<p>Title:{item.snippet.title}</p>*/}
+                {/*<p>Description:{item.snippet.description}</p>*/}
         </button>
+
       )
     })}
   </div>

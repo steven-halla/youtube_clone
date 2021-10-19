@@ -22,6 +22,7 @@ export const VideoPlayer = (props) => {
         frameBorder="0"
         allowFullScreen
       />
+      <p>{title}</p>
     </div>
   )
 }
