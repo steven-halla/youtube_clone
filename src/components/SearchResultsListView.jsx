@@ -1,12 +1,15 @@
 import React from "react";
-import {buttonClasses} from "@mui/material";
+import styled from "@emotion/styled";
 
-/*
- * this component accepts a searchResults object, which contains the list of "items" that youtube returned to us via api.
- * we also want to pass in handleSetVideo, so that we can set the a video to display/play when user clicks on a search result.
- */
+const CreateSearchResultsListView = styled.div `
+  .video-collection {
+    width: 190px;
+    height: 140px;
+  }
+`
+
 export const SearchResultsListView = (props) => {
-  const {searchResults, handleSetVideo} = props;
+  const {searchResults} = props;
 
   if (searchResults == null) {
     return <></>;
@@ -16,27 +19,20 @@ export const SearchResultsListView = (props) => {
     return <>no match found</>;
   }
 
-
 return(
-  <div>
-    {console.log("parent function:", props)}
-    {searchResults.items.map((item, index) => {
-      {console.log("item", item)}
-      return(
+  <CreateSearchResultsListView>
+    <div>
+      {searchResults.items.map((item, index) => {
+        return(
+          <button  key={index} onClick={() => {props.handleSetVideo(item)}}>
+            <img className="video-collection" src={item.snippet.thumbnails.default.url}
+                 alt="searched image"/>
+          </button>
+        )
+      })}
+    </div>
 
-        <button key={index} onClick={() => {props.handleSetVideo(item)}}>
-                <img src={item.snippet.thumbnails.default.url}
-                alt="searched image"/>
-                {/*<p>Title:{item.snippet.title}</p>*/}
-                {/*<p>Description:{item.snippet.description}</p>*/}
-        </button>
-
-      )
-    })}
-  </div>
-
-)
-
+  </CreateSearchResultsListView>)
 }
 
 

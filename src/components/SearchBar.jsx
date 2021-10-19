@@ -8,7 +8,10 @@ const CreateSearchBarDiv = styled.div`
   .search-button {
     margin-top: 5px;
   }
-
+  
+  .title {
+    color: red;
+  }
 `
 
 export const SearchBar = (props) => {
@@ -24,7 +27,7 @@ export const SearchBar = (props) => {
   return (
     <CreateSearchBarDiv>
       <div>
-        <h1>Video Search</h1>
+        <h1 className="title">YouTube Video Search</h1>
         <form action="" method="get" onSubmit={searchAndSetVideos}>
           <TextField size="medium" id="outlined-basic" variant="outlined" name="search" type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
           <Button className="search-button" size="large" variant="contained" type="submit" onClick={searchAndSetVideos}>Search</Button>
