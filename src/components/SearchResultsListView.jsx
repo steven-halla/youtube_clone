@@ -3,8 +3,8 @@ import styled from "@emotion/styled";
 
 const CreateSearchResultsListView = styled.div `
   .video-collection {
-    width: 190px;
-    height: 140px;
+    width: 15vw;
+    height: 15vh;
   }
 `
 

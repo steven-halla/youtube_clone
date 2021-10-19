@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {VideoPlayer} from "./components/VideoPlayer";
 import {SearchBar} from "./components/SearchBar";
 import {SearchResultsListView} from "./components/SearchResultsListView";
+import styled from "@emotion/styled";
 
 export const App = () => {
   const [searchResults, setSearchResults] = useState(null);
@@ -14,7 +15,7 @@ export const App = () => {
   }
 
   return (
-    <div>
+    <div className="wrapper">
       <SearchBar setSearchResults={setSearchResults}/>
       <SearchResultsListView
         handleSetVideo={handleSetVideo}
