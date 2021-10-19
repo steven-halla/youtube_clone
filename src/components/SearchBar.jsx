@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import axios from "axios";
 import styled from "@emotion/styled";
+import {Button, TextField} from "@mui/material";
+import YoutubeSearchedForIcon from '@mui/icons-material/YoutubeSearchedFor';
 
 const CreateSearchBarDiv = styled.div`
-  
+  .search-button {
+    margin-top: 5px;
+  }
 
 `
 
@@ -18,13 +22,16 @@ export const SearchBar = (props) => {
   }
 
   return (
-    <div>
-      <h1>Video Search</h1>
-      <form action="" method="get" onSubmit={searchAndSetVideos}>
-        <input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
-        <button type="submit" onClick={searchAndSetVideos}>Search</button>
-      </form>
-    </div>
+    <CreateSearchBarDiv>
+      <div>
+        <h1>Video Search</h1>
+        <form action="" method="get" onSubmit={searchAndSetVideos}>
+          <TextField size="medium" id="outlined-basic" variant="outlined" name="search" type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}/>
+          <Button className="search-button" size="large" variant="contained" type="submit" onClick={searchAndSetVideos}>Search</Button>
+          <YoutubeSearchedForIcon/>
+        </form>
+      </div>
+    </CreateSearchBarDiv>
   )
 }
 
