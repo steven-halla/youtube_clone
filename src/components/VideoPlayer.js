@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 // export const VideoPlayer = ({videoId, title}) => { // also works
 export const VideoPlayer = (props) => {
-  const {videoId, title} = props;
+  const {videoId, title, description} = props;
   const {video, setVideo} = useState();
 
 
@@ -22,7 +22,8 @@ export const VideoPlayer = (props) => {
         frameBorder="0"
         allowFullScreen
       />
-      <p>{title}</p>
+      <p>Title:{title}</p>
+      <p>Description:{description}</p>
     </div>
   )
 }

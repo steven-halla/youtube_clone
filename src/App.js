@@ -30,8 +30,8 @@ export const App = () => {
       {/*{videoId != null ? <VideoPlayer videoId={videoId}/> : null}*/}
       {/*<VideoPlayer videoId={videoId}/>*/}
       {selectedVideo != null
-        ? <VideoPlayer videoId={selectedVideo.id.videoId} />
-        : <VideoPlayer videoId={defaultVideoId}  />
+        ? <VideoPlayer videoId={selectedVideo.id.videoId} title={selectedVideo.snippet.title} description={selectedVideo.snippet.description}/>
+        : <VideoPlayer videoId={defaultVideoId} title={defaultVideoId} />
       }
       {/*{selectedVideo != null && <VideoPlayer videoId={selectedVideo.id.videoID\d}}*/}
     </div>
