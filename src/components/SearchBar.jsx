@@ -1,5 +1,12 @@
 import React, {useState} from 'react';
 import axios from "axios";
+import styled from "@emotion/styled";
+
+
+const CreateSearchBarDiv = styled.div`
+  
+
+`
 
 export const SearchBar = (props) => {
   const {setSearchResults} = props;
@@ -24,6 +31,7 @@ export const SearchBar = (props) => {
   }
 
   return (
+
     <div>
       <h1>Video Search</h1>
       <form action="" method="get" onSubmit={searchAndSetVideos}>
