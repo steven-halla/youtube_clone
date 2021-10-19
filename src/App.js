@@ -31,14 +31,44 @@ export const App = () => {
       {/*<VideoPlayer videoId={videoId}/>*/}
       {selectedVideo != null
         ? <VideoPlayer videoId={selectedVideo.id.videoId} title={selectedVideo.snippet.title} description={selectedVideo.snippet.description}/>
-        : <VideoPlayer videoId={defaultVideoId} title={defaultVideoId} />
+        : <VideoPlayer videoId={defaultVideoId} title={defaultVideoTitle} description={defaultVideoDescription}/>
       }
       {/*{selectedVideo != null && <VideoPlayer videoId={selectedVideo.id.videoID\d}}*/}
     </div>
   )
 }
 
-const defaultVideoId = 'Q8JyF3wpsHc';
+const defaultVideoId = '5qap5aO4i9A';
+const defaultVideoTitle = "lofi hip hop radio - beats to relax/study to\n"
+const defaultVideoDescription = "🤗 Thank you for listening, I hope you will have a good time here\n" +
+  "\n" +
+  "✔️ | This music is free to use in your livestreams & videos\n" +
+  "→  https://bit.ly/lofigirl-usethemusic\n" +
+  "\n" +
+  "🎼 | Listen on Spotify, Apple music and more\n" +
+  "→  https://bit.ly/lofigirI-playlists\n" +
+  "\n" +
+  "💬 | Join the Lofi Girl community\n" +
+  "→   https://bit.ly/lofigirl-discord\n" +
+  "→   https://bit.ly/lofigirl-reddit\n" +
+  "\n" +
+  "🌎 | Lofi Girl on all social media\n" +
+  "→  https://bit.ly/lofigirl-sociaI\n" +
+  "\n" +
+  "👕 | Lofi Girl merch\n" +
+  "→  https://bit.ly/lofigirI-merch\n" +
+  "\n" +
+  "🎶 | Radio tracklist\n" +
+  "→  https://bit.ly/lofi-tracklist\n" +
+  "\n" +
+  "🎨 | Art by Juan Pablo Machado\n" +
+  "→  https://bit.ly/Machadofb\n" +
+  "\n" +
+  "🎃 | Halloween theme by Enrico Camerra\n" +
+  "→  https://www.instagram.com/enricocamerra\n" +
+  "\n" +
+  "📝 | Submit your music / art\n" +
+  "→  https://bit.ly/lofi-submission"
 
 function getVideoIdFromFirstSearchResult(searchResult) {
   console.log('getVideoIdFromFirstSearchResult:', searchResult);
